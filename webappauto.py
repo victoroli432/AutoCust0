@@ -11,6 +11,6 @@ if paginaselecionada == 'pagina 1':
     st.selectbox('selecione uma opção',['opção 1','opção 2'])
 elif paginaselecionada == 'pagina 2':
     st.title('Autocust')
- st.write('Souto você é o bambambam')
+    st.write('Souto você é o bambambam')
 
 
