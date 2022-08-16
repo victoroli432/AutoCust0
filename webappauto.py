@@ -17,7 +17,7 @@ name, authentication_status = authenticator.login('Login','sidebar')
 if authentication_status:
  st.write('Bem Vindo')
 elif authentication_status == False:
- st.error('Username or password is incorrect’)
+ st.error('Username/password is incorrect')
 elif authentication_status == None:
  st.warning('Please enter your username and password')
  
