@@ -1,6 +1,5 @@
-from imaplib import _Authenticator
 import streamlit as st
-import _Authenticator as stauth
+import streamlit_Authenticator as stauth
 
 st.title('Autocust')
 
