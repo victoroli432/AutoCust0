@@ -1,36 +1,52 @@
+from os import write
+from tabnanny import check
+import pandas as pd
+import seaborn as sns
+import matplotlib.pyplot as plt
 import streamlit as st
-import streamlit_Authenticator as stauth
-
-st.title('Autocust')
 
 
-st.sidebar.title('Menu')
 
-names = ['victor oliveira','vinicius oliveira']
-usernames = ['victoroli','viniciusoli']
-passwords = ['123a','4567']
+st.title(
+    'AutoCust'
+    )
 
-hashed_passwords = stauth.hasher(passwords).generate()
-authenticator = stauth.authenticate(names,usernames,hashed_passwords,'cookie_name', 'signature_key',cookie_expiry_days=30)
-name, authentication_status = authenticator.login('Login','sidebar')
-if authentication_status:
- st.write('Bem Vindo')
-elif authentication_status == False:
- st.error('Username/password is incorrect')
-elif authentication_status == None:
- st.warning('Please enter your username and password')
- 
+st.sidebar.title('Serviços')
+psd = st.sidebar.selectbox('selecione uma opção',[' ','Tabela de gastos','Calculadora de Rendimento','Preços','Calendário' ])
 
-paginaselecionada = st.sidebar.selectbox('selecione a pagina que deseja',['pagina 1','pagina 2'])
+if  psd == ' ':
+    st.header('Você esta na plataforma do AutoCust ')
+    st.write('O melhor lugar para você se organizar, e ainda fazer sobrar aquela graninha ')
+elif psd == 'Tabela de gastos':  
+        with st.form(key='include categoria'):
+           input_categoria = st.selectbox(label='selecione a categoria', options=['combustivel','mecanico','multa','outros']) 
+           input_quantidade = st.number_input(label='insira a quantidade',step=0.5) 
+           input_valor = st.number_input(label='insira o valor gasto', step=0.5) 
+           input_button_submit = st.form_submit_button('enviar')
+        if input_button_submit:
+            st.write(f'Categoria: {input_categoria}')
+            st.write(f'Quantidade: {input_quantidade}')
+            st.write(f'Valor: {input_valor}') 
+            cliente.categoria = input_categoria
+            cliente.quantidade = input_quantidade
+            cliente.valor = input_valor
 
-if paginaselecionada == 'pagina 1':
-    opçãoselecionada = st.selectbox('selecione uma opção',['opção 1','opção 2'])
-    if opçãoselecionada == 'opção 1':
-     st.write('vinicião meu pau na sua mão')
-    elif opçãoselecionada == 'opção 2':
-     st.select_slider('escolhe um ai',['victor','vinicius','soutinho da galera'])
+            clientecontroller.incluir(cliente)
+elif psd == 'Calculadora de Rendimento':
+    st.title('Calculadora de Rendimento:')    
+if psd == 'Preços':
+    st.title('Preços:')
+elif psd == 'Calendário':
+    st.title('Calendário:')   
 
-elif paginaselecionada == 'pagina 2':
-    st.write('Souto você é o bambambam')
+
+       
+
+st.sidebar.title('Minha Conta')
+st.sidebar.selectbox('selecione uma opção',['Conta','Informações Pessoais' ])  
+        
+
+
+
 
 
