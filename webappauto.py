@@ -31,7 +31,8 @@ elif psd == 'Tabela de gastos':
 
             clientecontroller.incluir(cliente)
 elif psd == 'Calculadora de Rendimento':
-    st.title('Calculadora de Rendimento:')    
+    st.title('Calculadora de Rendimento:')          
+    opção = st.checkbox('teste', value=false)
 if psd == 'Preços':
     st.title('Preços:')
 elif psd == 'Calendário':
