@@ -35,12 +35,17 @@ elif psd == 'Calculadora de Rendimento':
     with st.form(key='Rendimento'):
              input_litros = st.number_input(label='insira a quantidade de litros',step=0.5)
              input_km = st.number_input(label='insira a kilometragem percorrida',step=0.5)
+             calculo = ((input_litros)/(input_km))
              botao = st.form_submit_button('Calcular')
-             calculo = (input_litros)/(input_km)
+             cliente.litors = input_litors
+             cliente.km = input_km
+             cliente.calculo = calculo
+             
     if botão:
             st.write(f'Litros: {input_litros}')
             st.write(f'Kilometragem percorrida: {input_km}')
             st.write(f'Rendimento: {calculo}')
+            
 if psd == 'Preços':
     st.title('Preços:')
 elif psd == 'Calendário':
