@@ -33,7 +33,7 @@ elif psd == 'Tabela de gastos':
 elif psd == 'Calculadora de Rendimento':
     st.title('Calculadora de Rendimento:')          
     opção = st.checkbox('teste')
-    botao = st.button('teste)
+    botao = st.button('teste')
 if psd == 'Preços':
     st.title('Preços:')
 elif psd == 'Calendário':
