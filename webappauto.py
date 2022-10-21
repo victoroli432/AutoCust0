@@ -36,7 +36,7 @@ elif psd == 'Calculadora de Rendimento':
              input_litros = st.number_input(label='insira a quantidade de litros',step=0.5)
              input_km = st.number_input(label='insira a kilometragem percorrida',step=0.5)
              botao = st.form_submit_button('Calcular')
-            calculo = ({input_litros}/{input_km})
+            calculo = (input_litros) / (input_km)
         if botão:
             st.write(f'Litros: {input_litros}')
             st.write(f'Kilometragem percorrida: {input_km}')
