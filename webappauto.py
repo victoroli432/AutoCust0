@@ -2,20 +2,20 @@ from os import write
 from tabnanny import check
 import pandas as pd
 import streamlit as st
+from PIL import Image
+import requests
 
-
-
-st.title(
-    'AutoCust'
-    )
-logo= Image.open('logo.png')
+logo = Image.open('logo.png')
+st.title('AutoCust')
 
 st.sidebar.title('Serviços')
 psd = st.sidebar.selectbox('selecione uma opção',['Selecione um Serviço ','Tabela de gastos','Calculadora de Rendimento','Indicadores','Calendário' ])
 
-if  psd == 'Selecione um Serviço':
-     st.header('Você esta na plataforma do AutoCust ')
-     st.write('O melhor lugar para você se organizar, e ainda fazer sobrar aquela graninha ')
+if  psd == 'Selecione um Serviço':  
+    st.write('O melhor site de todos')
+    st.write('Você esta na plataforma do AutoCust ')
+    st.writ('O melhor lugar para você se organizar, e ainda fazer sobrar aquela graninha ')
+ 
 elif psd == 'Tabela de gastos':  
         with st.form(key='include categoria'):
            input_categoria = st.selectbox(label='selecione a categoria', options=['combustivel','mecanico','multa','outros']) 
@@ -26,11 +26,7 @@ elif psd == 'Tabela de gastos':
             st.write(f'Categoria: {input_categoria}')
             st.write(f'Quantidade: {input_quantidade}')
             st.write(f'Valor: {input_valor}') 
-            cliente.categoria = input_categoria
-            cliente.quantidade = input_quantidade
-            cliente.valor = input_valor
 
-            clientecontroller.incluir(cliente)
 elif psd == 'Calculadora de Rendimento':
     st.title('Calculadora de Rendimento:') 
     with st.form(key='include preços'):
@@ -60,13 +56,3 @@ elif psd == 'Calendário':
 
 st.sidebar.title('Minha Conta')
 st.sidebar.selectbox('selecione uma opção',['Conta','Informações Pessoais' ])  
-        
-
-
-
-        
-
-
-
-
-
