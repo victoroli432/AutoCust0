@@ -1,10 +1,9 @@
 from os import write
 from tabnanny import check
 import pandas as pd
-import seaborn as sns
 import matplotlib.pyplot as plt
 import streamlit as st
-from PIL import Image
+
 
 
 st.title(
