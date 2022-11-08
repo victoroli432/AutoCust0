@@ -4,12 +4,13 @@ import pandas as pd
 import seaborn as sns
 import matplotlib.pyplot as plt
 import streamlit as st
-
+from PIL import Image
 
 
 st.title(
     'AutoCust'
     )
+logo= Image.open('logo.png')
 
 st.sidebar.title('Serviços')
 psd = st.sidebar.selectbox('selecione uma opção',['Selecione um Serviço ','Tabela de gastos','Calculadora de Rendimento','Indicadores','Calendário' ])
@@ -61,6 +62,10 @@ elif psd == 'Calendário':
 
 st.sidebar.title('Minha Conta')
 st.sidebar.selectbox('selecione uma opção',['Conta','Informações Pessoais' ])  
+        
+
+
+
         
 
 
