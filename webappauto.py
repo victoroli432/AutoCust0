@@ -5,9 +5,17 @@ import streamlit as st
 from PIL import Image
 import requests
 
-logo = Image.open('logo.png')
-logo
-st.title('AutoCust')
+
+col1, col2 = st.columns(2)
+
+with col1:
+    logo = Image.open('logo.png')
+    logo
+    st.title('AutoCust')
+with col2:
+    st.title("Noticias")
+
+
 
 st.sidebar.title('Serviços')
 psd = st.sidebar.selectbox('selecione uma opção',['Selecione um Serviço ','Tabela de gastos','Calculadora de Rendimento','Indicadores','Calendário' ])
