@@ -6,6 +6,7 @@ from PIL import Image
 import requests
 
 logo = Image.open('logo.png')
+logo
 st.title('AutoCust')
 
 st.sidebar.title('Serviços')
